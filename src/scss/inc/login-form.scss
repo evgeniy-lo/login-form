@@ -1,0 +1,241 @@
+@mixin button {
+  display: inline-flex;
+  width: 100%;
+  height: 40px;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all .3s ease;
+  border-radius: 4px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 552px;
+  margin: 48px auto 0;
+
+  @media (max-width: 576px) {
+    width: calc(100% - 20px);
+  }
+
+  &__logo {
+    text-align: center;
+    height: 48px;
+    margin-bottom: 60px;
+
+    img {
+      width: auto;
+      height: 100%;
+    }
+  }
+
+  &__content {
+    background-color: $white;
+    padding: 24px;
+    border-radius: 8px;
+
+    @media (min-width: 576px) {
+      padding: 48px;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 31px;
+    font-weight: 700;
+
+    @media (max-width: 576px) {
+      text-align: center;
+    }
+  }
+
+  #email, #password {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    transition: all .3s ease-in;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__label {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  &__input  {
+    border: 1px solid $gray-300;
+    border-radius: 4px;
+    transition: all .3s ease-in;
+    padding: 0 8px;
+    outline: 0;
+    color: $gray-800;
+    height: 32px;
+    line-height: 32px;
+
+    &:hover,
+    &:focus {
+      border-color: $gray-400;
+    }
+
+    &::placeholder {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 32px;
+      color: $gray-500;
+
+      &:focus {
+        color: $gray-800;
+      }
+    }
+  }
+
+  &__error {
+    input, input:hover, input:focus {
+      border-color: $jelly-600;
+    }
+    &-text {
+      display: block;
+      color: $jelly-600;
+      font-size: 12px;
+      line-height: 16px;
+      padding: 0 8px;
+      margin-top: 4px;
+    }
+  }
+
+  &__agreement {
+    margin-top: 20px;
+
+    p {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+      color: $gray-700;
+
+      a {
+        color: $blue-600;
+        display: inline-block;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: underline;
+        transition: all .1s ease-in;
+
+        &:hover {
+          color: $blue-400;
+        }
+      }
+    }
+  }
+
+  &__button {
+    margin-top: 12px;
+  }
+
+  &__btn {
+    @include button;
+    background: $orange-500;
+    color: $white;
+
+    &:hover {
+      background: $orange-300;
+    }
+  }
+
+  &__divider {
+    margin: 36px 0;
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 1px;
+    min-height: 1px;
+    font-size: 14px;
+    line-height: 32px;
+    
+    font-weight: 600;
+
+    @media (min-width: 360px) {
+      background-color: $gray-100;
+    }
+
+    &:before {
+      content: 'or continue with your social accounts';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: inherit;
+      padding: 0 9px;
+      background-color: $white;
+      border-radius: 4px;
+      color: $gray-400;
+      white-space: nowrap;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__social-auth {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: -20px;
+
+    @media (min-width: 460px) {
+      flex-direction: row;
+      justify-content: space-between;
+      margin: -20px auto 0;
+    }
+
+    @media (min-width: 576px) {
+      max-width: 430px;
+    }
+  }
+
+  &__social-btn {
+    @include button;
+    margin-top: 20px;
+    background: transparent;
+    color: $gray-800;
+    border: 1px solid $gray-300;
+
+    &:hover {
+      border-color: $orange-500;
+    }
+
+    @media (min-width: 375px) and (max-width: 459px) {
+      width: 306px;
+      margin: 20px auto 0;
+    }
+
+    @media (min-width: 460px) {
+      max-width: 32%;
+    }
+
+    @media (min-width: 576px) {
+      max-width: 144px;
+
+      &:first-child {
+        max-width: 121px;
+      }
+    }
+
+    img {
+      margin-right: 8px;
+      width: 24px;
+      height: 24px;
+    }
+
+  }
+}

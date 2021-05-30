@@ -1,0 +1,12 @@
+@import 'colors';
+@import 'reset';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+$font-main: 'Open Sans', sans-serif;
+
+body {
+  font-family: $font-main;
+  background-color: $cobalt-500;
+  color: $gray-800;
+  letter-spacing: 0px;
+}

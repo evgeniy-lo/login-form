@@ -1,0 +1,45 @@
+.rates {
+  margin-top: 60px;
+  color: $white;
+
+  &__title {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 -20px;
+
+    & > div {
+      margin-bottom: 20px;
+    }
+
+    @media (min-width: 576px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 500px;
+      margin: 20px auto -20px;
+
+      &>div {
+        width: 50%;
+        text-align: center;
+      }
+    }
+
+    @media (min-width: 992px) {
+      width: 910px;
+      flex-wrap: nowrap;
+
+      & > div {
+        width: 100%;
+      }
+    }
+  }
+}
