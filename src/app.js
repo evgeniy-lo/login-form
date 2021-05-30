@@ -67,6 +67,7 @@ const validateData = async (data) => {
 const onSubmitSuccess = (data) => {
   console.log('Email:', data.email);
   console.log('Password:', data.password);
+  form.reset();
 }
 
 function onSubmit(e) {
